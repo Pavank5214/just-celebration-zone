@@ -124,494 +124,68 @@
             </div>
         </div>
     </section>
-    <!--reservation-->
-    <section class="culinary-delight" id="reservations">
-        <div class="container">
-            <div class="restaurant-info">
-                <div class="restaurant-description padding-right animate-left">
-                    <div class="global-headline">
-                        <h2 class="sub-headline"><span class="first-letter">B</span>ook</h2>
-                        <h1 class="headline headline-dark">Your Event</h1>
-                        <div class="asterisk"><i class="fas fa-asterisk"></i></div>
-                    </div>
-                    <p>Ready to celebrate? Contact us to reserve your event package and let us handle the details for a memorable experience.</p>
-                    <style>
-                        /* Reset and Global Styles */
-                        * {
-                            margin: 0;
-                            padding: 0;
-                            box-sizing: border-box;
-                        }
-                
-                        :root {
-                            --main-font: 'Magra', sans-serif;
-                            --secondary-font: 'Billy Ohio', cursive;
-                            --body-font: 'Cabin', sans-serif;
-                            --main-font-color-dark: #252525;
-                            --secondary-font-color: #e4a24c;
-                            --secondary-font-color1: #DB901D;
-                            --secondary-font-color2: #D0A839;
-                            --body-font-color: #515151;
-                            --shadow-light: rgba(0,0,0,0.1);
-                            --shadow-dark: rgba(0,0,0,0.2);
-                        }
-                
-                        html {
-                            font-family: var(--body-font);
-                            font-size: 10px;
-                            color: var(--body-font-color);
-                            scroll-behavior: smooth;
-                        }
-                
-                        body {
-                            font-family: var(--body-font);
-                            color: var(--body-font-color);
-                            background: url("images/hero.jpg") center no-repeat fixed;
-                            background-size: cover;
-                            min-height: 100vh;
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            padding: 20px;
-                            overflow-x: hidden;
-                        }
-                
-                        /* Branding Header */
-                        .brand-header {
-                            position: absolute;
-                            top: 2rem;
-                            left: 50%;
-                            transform: translateX(-50%);
-                            z-index: 5;
-                        }
-                
-                        .brand-name {
-                            font-family: var(--secondary-font);
-                            font-size: 3rem;
-                            color: var(--secondary-font-color);
-                            letter-spacing: 2px;
-                            transition: color 0.3s ease;
-                            text-align: center;
-                            text-transform: uppercase;
-                        }
-                
-                        .brand-name:hover {
-                            color: var(--secondary-font-color1);
-                        }
-                
-                        /* Reservation Container Styles */
-                        .reservation-container {
-                            max-width: 700px;
-                            width: 100%;
-                            background: rgba(255, 255, 255, 0.95);
-                            padding: 4rem 3rem;
-                            border-radius: 12px;
-                            box-shadow: 0 10px 30px var(--shadow-light), 0 5px 15px var(--shadow-dark);
-                            position: relative;
-                            overflow: hidden;
-                            transition: transform 0.3s ease, box-shadow 0.3s ease;
-                            margin-top: 7rem; /* Offset for branding header */
-                        }
-                
-                        .reservation-container::before {
-                            content: '';
-                            position: absolute;
-                            top: -50%;
-                            left: -50%;
-                            width: 200%;
-                            height: 200%;
-                            background: radial-gradient(circle, rgba(228,162,76,0.1), transparent 70%);
-                            opacity: 0.3;
-                            z-index: 0;
-                            pointer-events: none;
-                        }
-                
-                        .reservation-container:hover {
-                            transform: translateY(-5px);
-                            box-shadow: 0 15px 40px var(--shadow-light), 0 10px 20px var(--shadow-dark);
-                        }
-                
-                        /* Heading Styles */
-                        h1 {
-                            font-family: var(--main-font);
-                            color: var(--main-font-color-dark);
-                            font-size: 3.5rem;
-                            text-align: center;
-                            margin-bottom: 2.5rem;
-                            letter-spacing: 2px;
-                            position: relative;
-                            z-index: 1;
-                            text-transform: uppercase;
-                        }
-                
-                        h1::after {
-                            content: '';
-                            position: absolute;
-                            bottom: -10px;
-                            left: 50%;
-                            width: 50px;
-                            height: 2px;
-                            background: var(--secondary-font-color);
-                            transform: translateX(-50%);
-                            transition: width 0.3s ease;
-                        }
-                
-                        h1:hover::after {
-                            width: 80px;
-                        }
-                
-                        /* Form Styles */
-                        .form-group {
-                            margin-bottom: 2rem;
-                            position: relative;
-                            z-index: 1;
-                        }
-                
-                        label {
-                            display: block;
-                            margin-bottom: 0.8rem;
-                            font-family: var(--main-font);
-                            color: var(--main-font-color-dark);
-                            font-size: 1.6rem;
-                            font-weight: 500;
-                            transition: color 0.3s ease;
-                        }
-                
-                        input, select, textarea {
-                            width: 100%;
-                            padding: 1.2rem 1.5rem;
-                            border: 2px solid #ddd;
-                            border-radius: 6px;
-                            font-size: 1.5rem;
-                            font-family: var(--body-font);
-                            background: rgba(255, 255, 255, 0.9);
-                            transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
-                            position: relative;
-                            z-index: 1;
-                        }
-                
-                        input:focus, select:focus, textarea:focus {
-                            outline: none;
-                            border-color: var(--secondary-font-color);
-                            box-shadow: 0 0 10px rgba(228,162,76,0.4);
-                            transform: translateY(-2px);
-                        }
-                
-                        input[type="number"]::-webkit-outer-spin-button,
-                        input[type="number"]::-webkit-inner-spin-button {
-                            -webkit-appearance: none;
-                            margin: 0;
-                        }
-                
-                        input[type="number"] {
-                            -moz-appearance: textfield;
-                        }
-                
-                        select {
-                            appearance: none;
-                            background: url('data:image/svg+xml,<svg fill="%23252525" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>') no-repeat right 1.5rem center;
-                            background-size: 1.2rem;
-                            padding-right: 3rem;
-                        }
-                
-                        textarea {
-                            resize: vertical;
-                            min-height: 120px;
-                        }
-                
-                        /* Button Styles */
-                        button {
-                            background: linear-gradient(45deg, var(--secondary-font-color), var(--secondary-font-color1));
-                            color: white;
-                            padding: 1.2rem 2.5rem;
-                            border: none;
-                            border-radius: 6px;
-                            font-size: 1.8rem;
-                            font-family: var(--main-font);
-                            cursor: pointer;
-                            width: 100%;
-                            margin-top: 1.5rem;
-                            position: relative;
-                            z-index: 1;
-                            overflow: hidden;
-                            transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-                        }
-                
-                        button::before {
-                            content: '';
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            width: 0;
-                            height: 100%;
-                            background: rgba(255,255,255,0.2);
-                            transition: width 0.5s ease;
-                            z-index: 0;
-                        }
-                
-                        button:hover {
-                            background: linear-gradient(45deg, var(--main-font-color-dark), var(--secondary-font-color1));
-                            transform: translateY(-3px);
-                            box-shadow: 0 5px 15px var(--shadow-dark);
-                        }
-                
-                        button:hover::before {
-                            width: 100%;
-                        }
-                
-                        button:active {
-                            transform: translateY(0);
-                        }
-                
-                        /* Back Link Styles */
-                        .back-link {
-                            display: block;
-                            text-align: center;
-                            margin-top: 2.5rem;
-                            color: var(--secondary-font-color);
-                            font-size: 1.6rem;
-                            text-decoration: none;
-                            font-family: var(--body-font);
-                            position: relative;
-                            z-index: 1;
-                            transition: color 0.3s ease, text-shadow 0.3s ease;
-                        }
-                
-                        .back-link::after {
-                            content: '';
-                            position: absolute;
-                            bottom: -5px;
-                            left: 50%;
-                            width: 0;
-                            height: 2px;
-                            background: var(--secondary-font-color);
-                            transform: translateX(-50%);
-                            transition: width 0.3s ease;
-                            z-index: 1;
-                        }
-                
-                        .back-link:hover {
-                            color: var(--main-font-color-dark);
-                            text-shadow: 0 0 10px rgba(228,162,76,0.3);
-                        }
-                
-                        .back-link:hover::after {
-                            width: 50%;
-                        }
-                
-                        /* Error/Validation Styles */
-                        .error {
-                            color: #d32f2f;
-                            font-size: 1.4rem;
-                            margin-top: 0.5rem;
-                            display: none;
-                            font-family: var(--body-font);
-                            font-style: italic;
-                        }
-                
-                        /* Responsive Design */
-                        @media screen and (max-width: 768px) {
-                            .brand-header {
-                                top: 1.5rem;
-                                left: 50%;
-                                transform: translateX(-50%);
-                            }
-                
-                            .brand-name {
-                                font-size: 2.5rem;
-                            }
-                
-                            .reservation-container {
-                                margin-top: 5rem; /* Adjust for branding header on mobile */
-                                padding: 2.5rem 1.5rem;
-                                margin: 0 1rem;
-                            }
-                
-                            h1 {
-                                font-size: 2.8rem;
-                                margin-bottom: 2rem;
-                            }
-                
-                            label, input, select, textarea, button, .back-link, .error {
-                                font-size: 1.4rem;
-                            }
-                
-                            button {
-                                padding: 1rem 2rem;
-                            }
-                        }
-                
-                        /* Animation for Form Entrance (Matching Main Website) */
-                        @keyframes fadeUp {
-                            0% { transform: translateY(4rem); opacity: 0; }
-                            100% { transform: translateY(0); opacity: 1; }
-                        }
-                
-                        .reservation-container {
-                            animation: fadeUp 0.8s ease-out;
-                        }
-                
-                        .brand-header {
-                            animation: fadeUp 0.8s ease-out 0.2s;
-                        }
-                    </style>
-                </head>
-                <body>
-                    <div class="brand-header">
-                        <div class="brand-name">Just Celebration Zone</div>
-                    </div>
-                
-                    <div class="reservation-container">
-                        <h1>Make a Reservation</h1>
-                        <form id="reservationForm" action="#" method="POST" novalidate>
-                            <div class="form-group">
-                                <label for="name">Full Name *</label>
-                                <input type="text" id="name" name="name" required aria-required="true">
-                                <span class="error" id="nameError">Please enter your full name.</span>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email *</label>
-                                <input type="email" id="email" name="email" required aria-required="true">
-                                <span class="error" id="emailError">Please enter a valid email address.</span>
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">Phone Number *</label>
-                                <input type="tel" id="phone" name="phone" required aria-required="true" pattern="[0-9]{10}">
-                                <span class="error" id="phoneError">Please enter a valid 10-digit phone number.</span>
-                            </div>
-                            <div class="form-group">
-                                <label for="date">Event Date *</label>
-                                <input type="date" id="date" name="date" required aria-required="true" min="<?php echo date('Y-m-d'); ?>">
-                                <span class="error" id="dateError">Please select a valid future date.</span>
-                            </div>
-                            <div class="form-group">
-                                <label for="package">Select Package *</label>
-                                <select id="package" name="package" required aria-required="true">
-                                    <option value="">Choose a package</option>
-                                    <option value="399">399 Rs [Grand Decoration]</option>
-                                    <option value="599">599 Rs [Music, Grand Decoration With AC]</option>
-                                    <option value="799">799 Rs [AC With Grand Decoration, Projector With Music]</option>
-                                    <option value="1299">1299 Rs [AC With Grand Decoration, Projector With Music, Fog Entry]</option>
-                                </select>
-                                <span class="error" id="packageError">Please select a package.</span>
-                            </div>
-                            <div class="form-group">
-                                <label for="guests">Number of Guests *</label>
-                                <input type="number" id="guests" name="guests" min="1" required aria-required="true">
-                                <span class="error" id="guestsError">Please enter a valid number of guests (minimum 1).</span>
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Additional Requests</label>
-                                <textarea id="message" name="message" rows="4" aria-label="Additional requests"></textarea>
-                            </div>
-                            <button type="submit">Submit Reservation</button>
-                        </form>
-                        <a href="index.html" class="back-link">Back to Home</a>
-                    </div>
-                
-                    <script>
-                        document.addEventListener('DOMContentLoaded', () => {
-                            const form = document.getElementById('reservationForm');
-                            const inputs = form.querySelectorAll('input, select, textarea');
-                
-                            // Form validation
-                            form.addEventListener('submit', (e) => {
-                                e.preventDefault();
-                                let isValid = true;
-                
-                                // Reset error messages
-                                document.querySelectorAll('.error').forEach(error => error.style.display = 'none');
-                
-                                // Validate name
-                                const name = document.getElementById('name').value.trim();
-                                if (!name) {
-                                    document.getElementById('nameError').style.display = 'block';
-                                    isValid = false;
-                                }
-                
-                                // Validate email
-                                const email = document.getElementById('email').value.trim();
-                                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                                if (!emailRegex.test(email)) {
-                                    document.getElementById('emailError').style.display = 'block';
-                                    isValid = false;
-                                }
-                
-                                // Validate phone (10 digits)
-                                const phone = document.getElementById('phone').value.trim();
-                                const phoneRegex = /^[0-9]{10}$/;
-                                if (!phoneRegex.test(phone)) {
-                                    document.getElementById('phoneError').style.display = 'block';
-                                    isValid = false;
-                                }
-                
-                                // Validate date (must be in the future)
-                                const date = new Date(document.getElementById('date').value);
-                                const today = new Date();
-                                today.setHours(0, 0, 0, 0);
-                                if (date <= today) {
-                                    document.getElementById('dateError').style.display = 'block';
-                                    isValid = false;
-                                }
-                
-                                // Validate package
-                                const packageSelect = document.getElementById('package').value;
-                                if (!packageSelect) {
-                                    document.getElementById('packageError').style.display = 'block';
-                                    isValid = false;
-                                }
-                
-                                // Validate guests (minimum 1)
-                                const guests = document.getElementById('guests').value;
-                                if (guests < 1 || isNaN(guests)) {
-                                    document.getElementById('guestsError').style.display = 'block';
-                                    isValid = false;
-                                }
-                
-                                if (isValid) {
-                                    alert('Reservation submitted successfully! We will contact you soon.');
-                                    form.reset();
-                                }
-                            });
-                
-                            // Real-time input validation
-                            inputs.forEach(input => {
-                                input.addEventListener('input', () => {
-                                    const error = input.nextElementSibling;
-                                    if (error && error.classList.contains('error')) {
-                                        error.style.display = 'none';
-                                    }
-                                });
-                            });
-                
-                            // Set minimum date dynamically (if PHP isn't used)
-                            const dateInput = document.getElementById('date');
-                            if (dateInput) {
-                                dateInput.min = new Date().toISOString().split('T')[0];
-                            }
-                
-                            // ScrollReveal animation for reservation container and brand header
-                            window.sr = ScrollReveal({
-                                reset: false,
-                                distance: '25rem',
-                                duration: 1000,
-                                easing: 'cubic-bezier(.5, 0, 0, 1)'
-                            });
-                
-                            sr.reveal('.reservation-container', { origin: 'bottom', delay: 300 });
-                            sr.reveal('.brand-header', { origin: 'top', delay: 200 });
-                        });
-                    </script>
-                </body>
-                    <a href="reservation.html" target="_blank" class="body-btn">Book Now or Make a Reservation</a>
+    <!-- Reservations -->
+<section class="culinary-delight" id="reservations">
+    <div class="container">
+        <div class="restaurant-info">
+            <div class="restaurant-description padding-right animate-left">
+                <div class="global-headline">
+                    <h2 class="sub-headline"><span class="first-letter">B</span>ook</h2>
+                    <h1 class="headline headline-dark">Your Event</h1>
+                    <div class="asterisk"><i class="fas fa-asterisk"></i></div>
                 </div>
-                <div class="image-group">
-                    <img class="animate-top" src="images/book1.avif" alt="Event Setup 1">
-                    <img class="animate-bottom" src="images/book2.avif" alt="Event Setup 2">
-                </div>
+                <p>Ready to celebrate? Fill out the form below to reserve your event package and let us handle the details for a memorable experience.</p>
+                <form id="reservationForm" action="#" method="POST" novalidate>
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required aria-required="true">
+                        <span class="error" id="nameError">Please enter your full name.</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required aria-required="true">
+                        <span class="error" id="emailError">Please enter a valid email address.</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required aria-required="true" pattern="[0-9]{10}">
+                        <span class="error" id="phoneError">Please enter a valid 10-digit phone number.</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Event Date *</label>
+                        <input type="date" id="date" name="date" required aria-required="true" min="<?php echo date('Y-m-d'); ?>">
+                        <span class="error" id="dateError">Please select a valid future date.</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="package">Select Package *</label>
+                        <select id="package" name="package" required aria-required="true">
+                            <option value="">Choose a package</option>
+                            <option value="399">399 Rs [Grand Decoration]</option>
+                            <option value="599">599 Rs [Music, Grand Decoration With AC]</option>
+                            <option value="799">799 Rs [AC With Grand Decoration, Projector With Music]</option>
+                            <option value="1299">1299 Rs [AC With Grand Decoration, Projector With Music, Fog Entry]</option>
+                        </select>
+                        <span class="error" id="packageError">Please select a package.</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="guests">Number of Guests *</label>
+                        <input type="number" id="guests" name="guests" min="1" required aria-required="true">
+                        <span class="error" id="guestsError">Please enter a valid number of guests (minimum 1).</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Additional Requests</label>
+                        <textarea id="message" name="message" rows="4" aria-label="Additional requests"></textarea>
+                    </div>
+                    <button type="submit" class="body-btn">Submit Reservation</button>
+                </form>
+            </div>
+            <div class="image-group">
+                <img class="animate-top" src="images/book1.avif" alt="Event Setup 1">
+                <img class="animate-bottom" src="images/book2.avif" alt="Event Setup 2">
             </div>
         </div>
-    </section>
+    </div>
+</section>
     <!--gallery-->
     <section class="gallery-section" id="gallery">
         <div class="container">

@@ -923,3 +923,252 @@ footer{
     display: block; /* Ensure it’s centered and full-width on mobile */
     text-align: center; /* Center align for better visual balance */
 }
+
+
+
+
+
+
+
+
+
+
+/* Reservations Section Styles */
+.culinary-delight {
+    padding: 3.9rem 0;
+    overflow: hidden;
+    background: url("images/delight-background.jpg") center no-repeat; /* Optional: Add a background if desired */
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    z-index: 1;
+}
+
+/* Form Container and Groups */
+.culinary-delight .restaurant-description form {
+    max-width: 100%;
+    margin-top: 2rem;
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.95); /* Slightly transparent for elegance */
+    padding: 2rem; /* Add padding for a framed look */
+    border-radius: 12px; /* Rounded corners for a premium feel */
+    box-shadow: 0 10px 30px var(--shadow-light), 0 5px 15px var(--shadow-dark); /* Deeper shadow for elevation */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.culinary-delight .restaurant-description form:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 15px 40px var(--shadow-light), 0 10px 20px var(--shadow-dark); /* Enhanced shadow on hover */
+}
+
+.form-group {
+    margin-bottom: 2.5rem; /* Increased spacing for elegance */
+    position: relative;
+    z-index: 1;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.8rem;
+    font-family: var(--main-font); /* Match main site headings */
+    color: var(--main-font-color-dark);
+    font-size: 1.8rem; /* Larger for prominence */
+    font-weight: 600; /* Bolder for emphasis */
+    letter-spacing: 1px; /* Match website’s letter spacing */
+    text-transform: uppercase; /* Match heading style for consistency */
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+label:hover {
+    color: var(--secondary-font-color); /* Gold on hover for interactivity */
+    text-shadow: 0 0 10px rgba(228,162,76,0.3); /* Subtle glow on hover */
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 1.5rem 1.8rem; /* Increased padding for a luxurious feel */
+    border: 2px solid #ddd;
+    border-radius: 8px; /* Slightly larger radius for elegance */
+    font-size: 1.6rem; /* Slightly larger for readability */
+    font-family: var(--body-font); /* Match body text */
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(245, 245, 245, 0.95)); /* Subtle gradient for depth */
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.05); /* Inner shadow for depth */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease, background 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--secondary-font-color); /* Gold accent for focus */
+    box-shadow: 0 0 15px rgba(228,162,76,0.5), inset 0 2px 5px rgba(228,162,76,0.1); /* Enhanced glow and inner shadow */
+    transform: translateY(-3px); /* Slightly more lift on focus */
+    background: rgba(255, 255, 255, 1); /* Solid white on focus for contrast */
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+select {
+    appearance: none;
+    background: url('data:image/svg+xml,<svg fill="%23252525" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>') no-repeat right 1.8rem center;
+    background-size: 1.5rem; /* Larger arrow for visibility */
+    padding-right: 3.5rem; /* More padding for arrow */
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.95); /* Match input background */
+}
+
+textarea {
+    resize: vertical;
+    min-height: 140px; /* Slightly taller for luxury */
+}
+
+/* Button Styles (Enhanced for premium look) */
+.body-btn {
+    font-size: 2rem; /* Larger for prominence */
+    color: white; /* White text for contrast on gradient */
+    font-family: var(--main-font); /* Match main site headings */
+    position: relative;
+    display: inline-block;
+    padding: 1.5rem 3rem; /* Larger padding for elegance */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: linear-gradient(45deg, var(--secondary-font-color), var(--secondary-font-color1)); /* Gold gradient */
+    border: none;
+    border-radius: 8px; /* Larger radius for elegance */
+    cursor: pointer;
+    width: 100%;
+    margin-top: 2rem; /* More spacing for emphasis */
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    box-shadow: 0 5px 15px var(--shadow-dark); /* Initial shadow for elevation */
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease, color 0.3s ease;
+}
+
+.body-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: rgba(255,255,255,0.3); /* Enhanced ripple effect */
+    transition: width 0.5s ease;
+    z-index: 0;
+}
+
+.body-btn:hover,
+.body-btn:focus {
+    background: linear-gradient(45deg, var(--main-font-color-dark), var(--secondary-font-color1)); /* Darker gradient on hover */
+    transform: translateY(-4px); /* More lift for premium feel */
+    box-shadow: 0 10px 25px var(--shadow-dark); /* Enhanced shadow on hover */
+    color: #fff; /* Ensure text stays white */
+}
+
+.body-btn:hover::before,
+.body-btn:focus::before {
+    width: 100%;
+}
+
+.body-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 5px 10px var(--shadow-dark);
+}
+
+/* Error/Validation Styles (Enhanced for elegance) */
+.error {
+    color: #d32f2f;
+    font-size: 1.5rem; /* Slightly larger for visibility */
+    margin-top: 0.8rem;
+    display: none;
+    font-family: var(--body-font);
+    font-style: italic;
+    letter-spacing: 0.5px;
+    text-shadow: 0 1px 2px rgba(211, 47, 47, 0.2); /* Subtle shadow for emphasis */
+    transition: opacity 0.3s ease; /* Smooth fade for error messages */
+}
+
+.error.active {
+    opacity: 1;
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+/* Responsive Design for Form (Enhanced for mobile) */
+@media screen and (max-width: 768px) {
+    .culinary-delight .restaurant-description form {
+        padding: 1.5rem; /* Reduced padding for mobile */
+        margin-top: 1.5rem;
+    }
+
+    .form-group {
+        margin-bottom: 2rem;
+    }
+
+    label, input, select, textarea, .body-btn {
+        font-size: 1.4rem;
+    }
+
+    .body-btn {
+        padding: 1.2rem 2.5rem;
+        font-size: 1.8rem;
+    }
+
+    .restaurant-info {
+        flex-direction: column;
+    }
+
+    .image-group {
+        margin-top: 2rem;
+    }
+}
+
+/* Animation for Form Entrance (Matching Main Website) */
+.culinary-delight .restaurant-description form {
+    animation: fadeUp 0.8s ease-out;
+}
+
+/* Ensure form elements animate with ScrollReveal */
+.culinary-delight .restaurant-description .form-group,
+.culinary-delight .restaurant-description .body-btn {
+    opacity: 0;
+    animation: fadeUp 0.8s forwards;
+    animation-delay: 0.3s;
+}
+
+/* Separator for form (optional, matching main site) */
+.culinary-delight .restaurant-description form::after {
+    content: '';
+    display: block;
+    margin: 2.5rem 0;
+    width: 100%;
+    max-width: 15.4rem;
+    height: 0.25rem;
+    background: linear-gradient(to right, transparent, var(--secondary-font-color), transparent); /* Gold gradient line */
+    position: relative;
+    opacity: 0;
+    animation: grow 2s forwards;
+    animation-delay: 1s;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Ensure z-index and positioning don’t interfere with animations */
+.culinary-delight .restaurant-description {
+    position: relative;
+    z-index: 2;
+}
