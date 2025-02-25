@@ -406,7 +406,7 @@ header{
 
 /*Tasteful recipes*/
 .tasteful-recipes{
-    background: url("images/tasteful-recipes.jpg") center no-repeat;
+    background: url("images/hero.jpg") center no-repeat;
     background-size: cover;
     background-attachment: fixed;
 }
@@ -431,7 +431,7 @@ header{
 
 /*The perfect blend*/
 .perfect-blend{
-    background: url("images/perfect-blend.jpg") center no-repeat;
+    background: url("images/hero.jpg") center no-repeat;
     background-size: cover;
     background-attachment: fixed;
 }
@@ -743,3 +743,183 @@ footer{
     }
 }
 
+/* Gallery Section */
+.gallery-section {
+    background-color: #f9f9f9;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    grid-gap: 2rem;
+    padding: 2rem 0;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.gallery-item img {
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.4rem;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .gallery-caption {
+    transform: translateY(0);
+}
+
+
+
+
+.logo-container {
+    z-index: 12;
+}
+
+.logo {
+    font-family: var(--secondary-font);
+    font-size: 3rem;
+    color: var(--secondary-font-color);
+    letter-spacing: 2px;
+    transition: color .3s ease;
+}
+
+.logo:hover {
+    color: var(--secondary-font-color1);
+}
+
+
+
+
+
+
+
+
+
+
+/* Event Packages Styles */
+.event-packages .restaurant-description p {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+    position: relative;
+    padding-left: 1.5rem; /* Space for the highlight effect */
+    transition: color 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Highlight pricing paragraphs with a decorative underline and color */
+.event-packages .restaurant-description p:nth-child(n+4) {
+    color: var(--secondary-font-color);
+    font-weight: bold;
+    font-family: var(--main-font); /* Use Magra for pricing to match headings */
+    font-size: 1.8rem; /* Slightly larger for emphasis */
+    position: relative;
+}
+
+/* Add a gold underline (matching --secondary-font-color) */
+.event-packages .restaurant-description p:nth-child(n+4)::after {
+    content: '';
+    position: absolute;
+    bottom: -0.5rem;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--secondary-font-color);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect for interactive pricing */
+.event-packages .restaurant-description p:nth-child(n+4):hover {
+    color: var(--secondary-font-color1); /* Darker gold for hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+    background: rgba(228, 162, 76, 0.1); /* Subtle gold background on hover */
+}
+
+.event-packages .restaurant-description p:nth-child(n+4):hover::after {
+    transform: scaleX(1); /* Expand the underline on hover */
+}
+
+/* Style the introductory paragraphs (before pricing) */
+.event-packages .restaurant-description p:nth-child(2) {
+    font-family: var(--secondary-font); /* Use Billy Ohio for a decorative touch */
+    font-size: 2.2rem; /* Larger for emphasis */
+    color: var(--secondary-font-color1); /* Bright gold for visual pop */
+    margin-bottom: 1.5rem;
+}
+
+/* Ensure general readability and spacing */
+.event-packages .restaurant-description p {
+    transition: all 0.3s ease; /* Smooth transitions for all interactions */
+}
+
+
+
+
+
+
+
+
+/* Body Button Styles (General) */
+.body-btn {
+    font-size: 1.8rem; /* Slightly larger for emphasis */
+    color: var(--secondary-font-color); /* Gold color for visibility */
+    font-family: var(--main-font); /* Use Magra for a bold, professional look */
+    position: relative;
+    display: inline-block;
+    padding: 1rem 2.5rem; /* Increased padding for better touch targets */
+    text-transform: uppercase; /* Match heading style for consistency */
+    letter-spacing: 2px; /* Match website’s letter spacing */
+    transition: color 0.3s ease, background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+/* Underline effect (matching pricing highlight) */
+.body-btn::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -0.5rem;
+    width: 0;
+    height: 2px;
+    background-color: var(--secondary-font-color);
+    transition: width 0.3s ease;
+}
+
+/* Hover and focus states for interactivity */
+.body-btn:hover,
+.body-btn:focus {
+    color: var(--secondary-font-color1); /* Darker gold on hover/focus */
+    transform: translateY(-2px); /* Slight lift for a dynamic effect */
+    background: rgba(228, 162, 76, 0.1); /* Subtle gold background on hover */
+    box-shadow: 0 5px 15px rgba(228, 162, 76, 0.3); /* Subtle shadow for elevation */
+}
+
+.body-btn:hover::before,
+.body-btn:focus::before {
+    width: 100%; /* Expand underline on hover/focus */
+}
+
+/* Ensure the link stands out in the context of the Reservations section */
+.culinary-delight .restaurant-description .body-btn {
+    margin-top: 2rem; /* Increased spacing for emphasis */
+    display: block; /* Ensure it’s centered and full-width on mobile */
+    text-align: center; /* Center align for better visual balance */
+}

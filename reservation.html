@@ -7,6 +7,8 @@
     <title>Reservation - Just Celebration Zone</title>
     <!-- Font Awesome CDN (Updated to latest version) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- ScrollReveal CDN -->
+    <script src="https://unpkg.com/scrollreveal"></script>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Cabin|Herr+Von+Muellerhoff|Source+Sans+Pro:400,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Magra:wght@400;700&display=swap" rel="stylesheet">
@@ -29,72 +31,149 @@
             --secondary-font-color1: #DB901D;
             --secondary-font-color2: #D0A839;
             --body-font-color: #515151;
+            --shadow-light: rgba(0,0,0,0.1);
+            --shadow-dark: rgba(0,0,0,0.2);
+        }
+
+        html {
+            font-family: var(--body-font);
+            font-size: 10px;
+            color: var(--body-font-color);
+            scroll-behavior: smooth;
         }
 
         body {
             font-family: var(--body-font);
             color: var(--body-font-color);
-            background-color: #f9f9f9;
+            background: url("images/hero.jpg") center no-repeat fixed;
+            background-size: cover;
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 20px;
+            overflow-x: hidden;
         }
 
-        /* Container Styles */
-        .container {
-            max-width: 600px;
+        /* Branding Header */
+        .brand-header {
+            position: absolute;
+            top: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 5;
+        }
+
+        .brand-name {
+            font-family: var(--secondary-font);
+            font-size: 3rem;
+            color: var(--secondary-font-color);
+            letter-spacing: 2px;
+            transition: color 0.3s ease;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .brand-name:hover {
+            color: var(--secondary-font-color1);
+        }
+
+        /* Reservation Container Styles */
+        .reservation-container {
+            max-width: 700px;
             width: 100%;
-            background: #fff;
-            padding: 3rem;
-            border-radius: 8px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
-            transition: box-shadow 0.3s ease;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 4rem 3rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px var(--shadow-light), 0 5px 15px var(--shadow-dark);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-top: 7rem; /* Offset for branding header */
         }
 
-        .container:hover {
-            box-shadow: 0 0 25px rgba(0,0,0,0.15);
+        .reservation-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(228,162,76,0.1), transparent 70%);
+            opacity: 0.3;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .reservation-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px var(--shadow-light), 0 10px 20px var(--shadow-dark);
         }
 
         /* Heading Styles */
         h1 {
             font-family: var(--main-font);
             color: var(--main-font-color-dark);
-            font-size: 3rem;
+            font-size: 3.5rem;
             text-align: center;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
             letter-spacing: 2px;
+            position: relative;
+            z-index: 1;
+            text-transform: uppercase;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            width: 50px;
+            height: 2px;
+            background: var(--secondary-font-color);
+            transform: translateX(-50%);
+            transition: width 0.3s ease;
+        }
+
+        h1:hover::after {
+            width: 80px;
         }
 
         /* Form Styles */
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
         }
 
         label {
             display: block;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
             font-family: var(--main-font);
             color: var(--main-font-color-dark);
-            font-size: 1.4rem;
+            font-size: 1.6rem;
             font-weight: 500;
+            transition: color 0.3s ease;
         }
 
         input, select, textarea {
             width: 100%;
-            padding: 1rem;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 1.4rem;
+            padding: 1.2rem 1.5rem;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 1.5rem;
             font-family: var(--body-font);
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            background: rgba(255, 255, 255, 0.9);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+            position: relative;
+            z-index: 1;
         }
 
         input:focus, select:focus, textarea:focus {
             outline: none;
             border-color: var(--secondary-font-color);
-            box-shadow: 0 0 5px rgba(228,162,76,0.3);
+            box-shadow: 0 0 10px rgba(228,162,76,0.4);
+            transform: translateY(-2px);
         }
 
         input[type="number"]::-webkit-outer-spin-button,
@@ -109,34 +188,54 @@
 
         select {
             appearance: none;
-            background: url('data:image/svg+xml,<svg fill="%23252525" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>') no-repeat right 1rem center;
-            background-size: 1rem;
-            padding-right: 2.5rem;
+            background: url('data:image/svg+xml,<svg fill="%23252525" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>') no-repeat right 1.5rem center;
+            background-size: 1.2rem;
+            padding-right: 3rem;
         }
 
         textarea {
             resize: vertical;
-            min-height: 100px;
+            min-height: 120px;
         }
 
         /* Button Styles */
         button {
-            background-color: var(--secondary-font-color);
+            background: linear-gradient(45deg, var(--secondary-font-color), var(--secondary-font-color1));
             color: white;
-            padding: 1rem 2rem;
+            padding: 1.2rem 2.5rem;
             border: none;
-            border-radius: 4px;
-            font-size: 1.6rem;
+            border-radius: 6px;
+            font-size: 1.8rem;
             font-family: var(--main-font);
             cursor: pointer;
             width: 100%;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            margin-top: 1rem;
+            margin-top: 1.5rem;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+        }
+
+        button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: rgba(255,255,255,0.2);
+            transition: width 0.5s ease;
+            z-index: 0;
         }
 
         button:hover {
-            background-color: var(--main-font-color-dark);
-            transform: translateY(-2px);
+            background: linear-gradient(45deg, var(--main-font-color-dark), var(--secondary-font-color1));
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px var(--shadow-dark);
+        }
+
+        button:hover::before {
+            width: 100%;
         }
 
         button:active {
@@ -147,51 +246,101 @@
         .back-link {
             display: block;
             text-align: center;
-            margin-top: 2rem;
+            margin-top: 2.5rem;
             color: var(--secondary-font-color);
-            font-size: 1.4rem;
+            font-size: 1.6rem;
             text-decoration: none;
             font-family: var(--body-font);
-            transition: color 0.3s ease;
+            position: relative;
+            z-index: 1;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+        }
+
+        .back-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--secondary-font-color);
+            transform: translateX(-50%);
+            transition: width 0.3s ease;
+            z-index: 1;
         }
 
         .back-link:hover {
             color: var(--main-font-color-dark);
-            text-decoration: underline;
+            text-shadow: 0 0 10px rgba(228,162,76,0.3);
+        }
+
+        .back-link:hover::after {
+            width: 50%;
         }
 
         /* Error/Validation Styles */
         .error {
             color: #d32f2f;
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             margin-top: 0.5rem;
             display: none;
+            font-family: var(--body-font);
+            font-style: italic;
         }
 
         /* Responsive Design */
-        @media screen and (max-width: 480px) {
-            .container {
-                padding: 2rem;
+        @media screen and (max-width: 768px) {
+            .brand-header {
+                top: 1.5rem;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .brand-name {
+                font-size: 2.5rem;
+            }
+
+            .reservation-container {
+                margin-top: 5rem; /* Adjust for branding header on mobile */
+                padding: 2.5rem 1.5rem;
                 margin: 0 1rem;
             }
 
             h1 {
-                font-size: 2.5rem;
-                margin-bottom: 1.5rem;
+                font-size: 2.8rem;
+                margin-bottom: 2rem;
             }
 
-            label, input, select, textarea, button, .back-link {
-                font-size: 1.3rem;
+            label, input, select, textarea, button, .back-link, .error {
+                font-size: 1.4rem;
             }
 
             button {
-                padding: 0.8rem 1.5rem;
+                padding: 1rem 2rem;
             }
+        }
+
+        /* Animation for Form Entrance (Matching Main Website) */
+        @keyframes fadeUp {
+            0% { transform: translateY(4rem); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        .reservation-container {
+            animation: fadeUp 0.8s ease-out;
+        }
+
+        .brand-header {
+            animation: fadeUp 0.8s ease-out 0.2s;
         }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="brand-header">
+        <div class="brand-name">Just Celebration Zone</div>
+    </div>
+
+    <div class="reservation-container">
         <h1>Make a Reservation</h1>
         <form id="reservationForm" action="#" method="POST" novalidate>
             <div class="form-group">
@@ -250,7 +399,7 @@
                 let isValid = true;
 
                 // Reset error messages
-                document.queryName('error').forEach(error => error.style.display = 'none');
+                document.querySelectorAll('.error').forEach(error => error.style.display = 'none');
 
                 // Validate name
                 const name = document.getElementById('name').value.trim();
@@ -313,6 +462,23 @@
                     }
                 });
             });
+
+            // Set minimum date dynamically (if PHP isn't used)
+            const dateInput = document.getElementById('date');
+            if (dateInput) {
+                dateInput.min = new Date().toISOString().split('T')[0];
+            }
+
+            // ScrollReveal animation for reservation container and brand header
+            window.sr = ScrollReveal({
+                reset: false,
+                distance: '25rem',
+                duration: 1000,
+                easing: 'cubic-bezier(.5, 0, 0, 1)'
+            });
+
+            sr.reveal('.reservation-container', { origin: 'bottom', delay: 300 });
+            sr.reveal('.brand-header', { origin: 'top', delay: 200 });
         });
     </script>
 </body>
